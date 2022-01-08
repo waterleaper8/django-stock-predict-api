@@ -26,7 +26,7 @@ DEBUG = False
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-u-dama68auw$0sba*2@&vae&*)zy+0s6vq!o*8%s8w573xbic0'
 
-ALLOWED_HOSTS = ['waterleaper.net', 'stock-predict-2022.herokuapp.com']
+ALLOWED_HOSTS = ['waterleaper.net', 'stock-predict-2022.herokuapp.com', '217.178.130.18']
 
 try:
     from .local_settings import *
@@ -63,6 +63,7 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
     'http://192.168.11.87:3000',
     'https://waterleaper.net',
+    'https://stock-predict-2022.herokuapp.com',
 ]
 # レスポンスを公開する
 CORS_ALLOW_CREDENTIALS = True
