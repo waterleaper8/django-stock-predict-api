@@ -31,7 +31,7 @@ try:
 except ImportError:
     pass
 
-ALLOWED_HOSTS = ['stock-predict-2022.herokuapp.com']
+ALLOWED_HOSTS = ['waterleaper.net', 'stock-predict-2022.herokuapp.com']
 
 
 # Application definition
@@ -61,7 +61,7 @@ MIDDLEWARE = [
 CORS_ORIGIN_WHITELIST = [
     'http://127.0.0.1:8000',
     'http://localhost:3000',
-    'http://192.168.11.87:3000'
+    'http://192.168.11.87:3000',
     "https://waterleaper.net"
 ]
 
