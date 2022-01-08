@@ -30,10 +30,6 @@ try:
 except ImportError:
     pass
 
-if not DEBUG:
-    import django_heroku
-    django_heroku.settings(locals())
-
 ALLOWED_HOSTS = ['stock-predict-2022.herokuapp.com']
 
 
@@ -152,3 +148,7 @@ STATICFILES_DIRS = (
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+if not DEBUG:
+    import django_heroku
+    django_heroku.settings(locals())
