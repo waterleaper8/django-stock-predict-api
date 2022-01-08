@@ -13,7 +13,7 @@ from datetime import datetime, timedelta
 def get_predict_data(request):
   try:
     #株価取得範囲を設定
-    td = timedelta(days=700)
+    td = timedelta(days=100)
     start = datetime.now() - td
     end = datetime.now()
     #銘柄コード
