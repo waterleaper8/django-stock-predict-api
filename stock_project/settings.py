@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
-import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,13 +29,7 @@ try:
     from .local_settings import *
 except ImportError:
     pass
-
-if DEBUG==False:
-    SECRET_KEY = os.environ['SECRET_KEY']
-    django_heroku.settings(locals()) #追加
-
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -157,4 +150,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 if not DEBUG:
     import django_heroku
+    SECRET_KEY = os.environ['SECRET_KEY']
     django_heroku.settings(locals())
