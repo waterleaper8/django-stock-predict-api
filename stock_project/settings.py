@@ -28,11 +28,12 @@ ALLOWED_HOSTS = ['waterleaper.net', 'stock-predict-2022.herokuapp.com', '217.178
 
 try:
     from .local_settings import *
-except ModuleNotFoundError:
-    SECRET_KEY = os.environ['SECRET_KEY']
-    django_heroku.settings(locals()) #追加
+except ImportError:
     pass
 
+if DEBUG==False:
+    SECRET_KEY = os.environ['SECRET_KEY']
+    django_heroku.settings(locals()) #追加
 
 # Application definition
 
