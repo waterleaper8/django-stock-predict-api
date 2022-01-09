@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,14 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-u-dama68auw$0sba*2@&vae&*)zy+0s6vq!o*8%s8w573xbic0'
-
 ALLOWED_HOSTS = ['waterleaper.net', 'stock-predict-2022.herokuapp.com', '217.178.130.18']
 
 try:
     from .local_settings import *
 except ImportError:
+    SECRET_KEY = os.environ['SECRET_KEY']
+    django_heroku.settings(locals()) #追加
     pass
 
 
