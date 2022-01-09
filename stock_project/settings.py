@@ -28,6 +28,9 @@ ALLOWED_HOSTS = ['waterleaper.net', 'stock-predict-2022.herokuapp.com', '217.178
 try:
     from .local_settings import *
 except ImportError:
+    SECRET_KEY = os.environ['SECRET_KEY']
+    import django_heroku
+    django_heroku.settings(locals())
     pass
 
 
