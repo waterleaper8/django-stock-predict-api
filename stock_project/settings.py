@@ -57,6 +57,7 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
     'http://192.168.11.87:3000',
     'https://waterleaper.net',
+    'https://waterleaper.net/',
     'https://stock-predict-2022.herokuapp.com',
 ]
 # レスポンスを公開する
